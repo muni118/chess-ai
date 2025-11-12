@@ -1,0 +1,5 @@
+{
+  "name": "Chess Tutor AI",
+  "description": "An offline-first chess application designed to teach beginners. It features an adaptive AI tutor that provides move highlights, strategic hints, and feedback, helping players learn and improve at their own pace. Includes modes for playing against AI and practicing specific chess tactics.",
+  "requestFramePermissions": []
+}

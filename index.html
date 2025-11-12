@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Tutor AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes pop-in {
+        0% {
+          transform: scale(0.6);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .animate-pop-in {
+        animation: pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      @keyframes pop-in-dot {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .animate-pop-in-dot {
+        animation: pop-in-dot 0.2s ease-out;
+      }
+      
+      @keyframes pulse-yellow {
+        0%, 100% { box-shadow: inset 0 0 0 4px rgba(251, 191, 36, 0.5); }
+        50% { box-shadow: inset 0 0 0 7px rgba(251, 191, 36, 0.2); }
+      }
+      .animate-pulse-yellow {
+        animation: pulse-yellow 2.5s infinite ease-in-out;
+      }
+
+      @keyframes capture-fade-out {
+        0% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(0.1);
+          opacity: 0;
+        }
+      }
+      .animate-capture-fade-out {
+        animation: capture-fade-out 0.4s ease-out;
+      }
+      
+      @keyframes flash-capture-bg {
+        0% { background-color: transparent; }
+        50% { background-color: rgba(220, 38, 38, 0.4); } /* A semi-transparent red */
+        100% { background-color: transparent; }
+      }
+      .animate-flash-capture-bg {
+          animation: flash-capture-bg 0.4s ease-out;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'board-light': '#f0d9b5',
+              'board-dark': '#b58863',
+              'highlight-move': '#14551e',      /* Solid green for moves */
+              'highlight-selected': '#ffff00',   /* Solid yellow for selection */
+              'highlight-check': '#ff0000',      /* Solid red for check */
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
+    "chess.js": "https://aistudiocdn.com/chess.js@^1.4.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-900 text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
